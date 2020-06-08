@@ -25,30 +25,30 @@ $this->load->view('header.php');
         <!--Slides-->
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="images/banner1.jpg" style="opacity: 0.85;" alt="First slide">
+                <img class="d-block w-100" src="images/banner2.jpg" style="opacity: 0.85;">
                  <div class="gradient"></div>
                   <div class="carousel-caption">
                    <h1>Pensou em construir?</h1>
-                   <p class="lead">A Milano é referência em construção, com mais de X anos de experiência em várias obras espalhadas por Curitiba e Região Metropolitana.</p>
-                   <a class="btn btn-primary" style="width: 100%" target="_blank" href="https://api.whatsapp.com/send?phone=5541987032512"><span>Solicite um orçamento <i class="fab fa-whatsapp"></i></span></a>
+                   <p class="lead">A Milano é referência em construção, com experiência em várias obras espalhadas por Curitiba e Região Metropolitana.</p>
+                   <a class="btn btn-primary" style="width: 100%" target="_blank" href="https://api.whatsapp.com/send?phone=554197161740"><span>Solicite um orçamento <i class="fab fa-whatsapp"></i></span></a>
                   </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/banner2.jpg" alt="Second slide">
+                <img class="d-block w-100" src="images/banner3.jpg">
                  <div class="gradient"></div>
                   <div class="carousel-caption">
                    <h1>Pensou em reformar?</h1>
-                   <p class="lead">A Milano é referência em construção, com mais de X anos de experiência em várias obras espalhadas por Curitiba e Região Metropolitana.</p>
-                   <a class="btn btn-primary" style="width: 100%" target="_blank" href="https://api.whatsapp.com/send?phone=5541987032512"><span>Solicite um orçamento <i class="fab fa-whatsapp"></i></span></a>
+                   <p class="lead">A Milano é referência em construção, com experiência em várias obras espalhadas por Curitiba e Região Metropolitana.</p>
+                   <a class="btn btn-primary" style="width: 100%" target="_blank" href="https://api.whatsapp.com/send?phone=554197161740"><span>Solicite um orçamento <i class="fab fa-whatsapp"></i></span></a>
                   </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/banner3.jpg" alt="Third slide">
+                <img class="d-block w-100" src="images/concretagem.jpg">
                  <div class="gradient"></div>
                   <div class="carousel-caption">
                    <h1>A Construtora Milano tem a solução!</h1>
-                   <p class="lead">A Milano é referência em construção, com mais de X anos de experiência em várias obras espalhadas por Curitiba e Região Metropolitana.</p>
-                   <a class="btn btn-primary" style="width: 100%" target="_blank" href="https://api.whatsapp.com/send?phone=5541987032512"><span>Solicite um orçamento <i class="fab fa-whatsapp"></i></span></a>
+                   <p class="lead">A Milano é referência em construção, com experiência em várias obras espalhadas por Curitiba e Região Metropolitana.</p>
+                   <a class="btn btn-primary" style="width: 100%" target="_blank" href="https://api.whatsapp.com/send?phone=554197161740"><span>Solicite um orçamento <i class="fab fa-whatsapp"></i></span></a>
                   </div>
             </div>
         </div>
@@ -74,7 +74,10 @@ $this->load->view('header.php');
                             for ($j = 0; $j < count($arrProjetos[$i]->imagens); $j++) {
                                 $projetoCorrente = $arrProjetos[$i];
                                 $idProjeto = $arrProjetos[$i]->id;
-                                echo '<a class="fancybox hide" rel="group'.$i.'" title="" href="'.DIRPROJ.'/'.$idProjeto.'/'.$arrProjetos[$i]->imagens[$j]['str_nome'].'"></a>';
+                                $capa = $arrProjetos[$i]->imagens[$j]['str_capa'];
+                                if ($capa != '1') {
+                                    echo '<a class="fancybox hide" rel="group'.$i.'" title="" href="'.DIRPROJ.'/'.$idProjeto.'/'.$arrProjetos[$i]->imagens[$j]['str_nome'].'"></a>';
+                                }                            
                             } 
                             echo '</div>';
                         } ?>
@@ -213,24 +216,29 @@ $this->load->view('header.php');
                 <h2 style="text-align: center">Nossos Serviços</h2>
                 <!-- <div class="row text-center text-lg-left"> -->
                     <div class="row">
-                    <div class="col-lg-3 col-md-3 col-xs-3">
-                        <img class="img-servicos" src="images/banner1.jpg">
-                        <div align="center">Teste</div>
+                        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img class="img-servicos" src="images/concretagem.jpg">
+                            <div align="center">Alvenaria</div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img class="img-servicos" src="images/concretagem.jpg">
+                            <div align="center">Cerâmica e Porcelanato</div>
+                        </div>                            
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img class="img-servicos" src="images/concretagem.jpg">
+                            <div align="center">Pintura</div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img class="img-servicos" src="images/concretagem.jpg">
+                            <div align="center">Reformas</div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img class="img-servicos" src="images/concretagem.jpg">
+                            <div align="center">Hidráulica</div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1"></div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-xs-3">
-                        <img class="img-servicos" src="images/banner1.jpg">
-                        <div align="center">Teste</div>
-                    </div>                            
-                    <div class="col-lg-3 col-md-3 col-xs-3">
-                        <img class="img-servicos" src="images/banner1.jpg">
-                        <div align="center">Teste</div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-xs-3">
-                        <img class="img-servicos" src="images/banner1.jpg">
-                        <div align="center">Teste</div>
-                    </div>
-                   
-                </div>
 
             </div>
             <!-- /.container -->

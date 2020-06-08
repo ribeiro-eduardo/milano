@@ -45,4 +45,13 @@ class Imagens extends CI_Controller {
             // redirect($this->uri->uri_string());
         }
     }
+
+    public function capa()
+    {
+        $idProjeto = $this->uri->segment(3);
+        $idImagem = $this->uri->segment(4); 
+        $arr['str_capa'] = '1';
+        $this->i->capa($idImagem, $idProjeto, $arr);
+        redirect('projetos/imagens/'.$idProjeto, 'refresh');
+    }
 }

@@ -14,6 +14,11 @@
 		    window.location.href = "<?php echo base_url(); ?>imagens/exclui/"+idProjeto+"/"+idImagem;
 	    }
     }
+
+    function capa(idProjeto, idImagem)
+    {
+        window.location.href = "<?php echo base_url(); ?>imagens/capa/"+idProjeto+"/"+idImagem;
+    }
 </script>
 
 <div class="container">
@@ -46,7 +51,21 @@
                     <div class="row">
                 <?php } ?>    
                 <div class="col-lg-3 col-md-3 col-xs-3">
-                <span style="cursor: pointer; text-align: right"><a onclick="deletar(<?=$imagens[$i]['id_projeto'] ?>, <?=$imagens[$i]['id']?>)"><i class="fas fa-trash-alt"></i></a></span>
+                <span style="cursor: pointer; text-align: right">
+                    <a onclick="deletar(<?=$imagens[$i]['id_projeto'] ?>, <?=$imagens[$i]['id']?>)">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    <a onclick="capa(<?=$imagens[$i]['id_projeto'] ?>, <?=$imagens[$i]['id']?>)">
+                    <?php
+                        if ($imagens[$i]['str_capa'] == '1') {
+                            echo '<i class="fas fa-bookmark"></i>';
+                        } else {
+                            echo '<i class="far fa-bookmark"></i>';
+                        }
+                    ?>
+                    
+                    </a>
+                </span>
                     <img style="width: 100%;" src="<?php echo DIRPROJ.'/'.$imagens[$i]['id_projeto'].'/'.$imagens[$i]['str_imagem']; ?>"></img>
                 </div>
             <?php }

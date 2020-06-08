@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/milano/site';
+// $config['base_url'] = '/site';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ $config['base_url'] = 'http://localhost/milano/site';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'home.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

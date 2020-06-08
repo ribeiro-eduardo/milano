@@ -28,9 +28,12 @@ class Projetos extends CI_Controller {
         } 
         else if ($this->uri->segment(3) == 'altera') {
             $idProjeto = $this->uri->segment(4);
-            $projeto = $this->p1->getProjetoById($idProjeto);
+            $projeto = $this->p1->getProjetos($idProjeto);
             
-            $dados['projeto'] = $projeto;
+            $dados['projeto']['id'] = $projeto->id;
+            $dados['projeto']['str_nome'] = $projeto->str_nome;
+            $dados['projeto']['str_desc'] = $projeto->str_desc;
+            $dados['projeto']['id_categoria'] = $projeto->id_categoria;
             $dados['action']  = 'altera';
             
             $this->load->view('projetos_form', $dados);
@@ -46,8 +49,10 @@ class Projetos extends CI_Controller {
         
         if ($this->p1->novo($arr)) {
             // mkdir("../../../projetos/".$this->db->insert_id());
-            mkdir('./../projetos/' . $this->db->insert_id(), 0777, TRUE);
-            // redirect('projetos', 'refresh');
+            // die(DIRPROJ.'/'.$this->db->insert_id());
+            $path = DIRPROJ.'/'.$this->db->insert_id();
+            mkdir($path, 0777, TRUE);
+            redirect('projetos', 'refresh');
         }
     }
 
@@ -74,7 +79,7 @@ class Projetos extends CI_Controller {
         $arrImagens = $this->i->getImagens($idProjeto);
         if (!empty($arrImagens->result())) {
             foreach($arrImagens->result() as $r) {
-                $imagens[] = ['str_imagem' => $r->str_imagem, 'id' => $r->id, 'id_projeto' => $r->id_projeto];
+                $imagens[] = ['str_imagem' => $r->str_imagem, 'id' => $r->id, 'id_projeto' => $r->id_projeto, 'str_capa' => $r->str_capa];
             }
             $dados['imagens'] = $imagens;
         }

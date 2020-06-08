@@ -6,14 +6,14 @@ class Home extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Home_model', 'l1');
+        $this->load->model('home_model', 'l1');
         $this->load->helper('url');
     }
 
     public function index()
     {
         $this->load->model('Projetos_model', 'p1');
-        $this->load->model('Imagens_model', 'i1');
+        $this->load->model('imagens_model', 'i1');
         $arrProjetos = $this->p1->getProjetos()->result();
         foreach ($arrProjetos as $key => $value) {
             // ver($arrProjetos);

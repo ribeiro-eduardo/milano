@@ -326,7 +326,7 @@ nav {
 ===============================*/
 
 #portfolio {
-    background-color: #fff;
+    background-color: #000;
     font-family: 'Playfair Display', serif;
 }
 
@@ -339,6 +339,20 @@ nav {
     text-align: center;
     font-size: 36px;
     padding: 40px 0;
+}
+
+#portfolio h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    /* padding: 40px 0; */
+}
+
+#portfolio p {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    /* padding: 40px 0; */
 }
 
 #portfolio .box-1,
